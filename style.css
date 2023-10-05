@@ -1,0 +1,195 @@
+:root {
+  --primary-color: #1C1917;
+  --purple-color: #5221E6;
+  --grey-color:#8491A0;
+  --max-width: 1200px;
+  --extra-light: #faf5ff;
+  --background-color:#ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+  max-width: 1200px; 
+  margin: auto;
+  padding: 24px 16px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-family: 'Arizonia', cursive;
+  font-size: 36px;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--purple-color);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 32px; 
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 14px; 
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 8px 16px; 
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  color: var(--purple-color);
+}
+
+.hero-section {
+  background-color: var(--background-color);
+}
+
+.hero-section-container {
+  min-height: 100vh;
+  max-width: 1200px; 
+  margin: auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+ }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: var(--primary-color);
+  margin-bottom: 16px; 
+}
+
+.description {
+  line-height: 24px;
+  color: var(--primary-color);
+  margin-bottom: 32px; 
+}
+
+.action-btns {
+  display: flex;
+  gap: 16px; 
+}
+
+.action-btns button {
+  font-family: "Sen", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 16px 32px; 
+  outline: none;
+  border: 1.5px solid var(--purple-color);
+  border-radius: 0;
+  color: var(--primary-color);
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.action-btns .view-resume:hover {
+  background-color: var(--purple-color);
+  color: #ffffff;
+}
+
+.hero-image {
+  display: grid;
+  place-items: center;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 0;
+}
+
+@media (max-width: 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 64px);
+    left: -100%;
+    top: 64px;
+    background-color: var(--background-color);
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px; 
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  .hero-section-container {
+    padding: 100px 16px 80px 16px; 
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action-btns {
+    margin: auto;
+  }
+}
